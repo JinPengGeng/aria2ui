@@ -35,5 +35,7 @@ The launcher will set the default download dir to the home folder, and will save
 Feel free to open an issue on GitHub. I will say in advance this project depends on other heavily developed projects so it would be best to open issues on their respective pages rather than this one.
 
 For the web interface: https://github.com/ziahamza/webui-aria2
+
 For the launcher: https://github.com/nwjs/nw.js/
+
 And of course for aria2: https://github.com/tatsuhiro-t/aria2
