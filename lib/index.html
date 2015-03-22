@@ -5,6 +5,7 @@
 		var document = document;
 		var portfinder = require('portfinder');
 		var app = require('./index.js');
+		app.pid = process.pid;
 		var max = 65535;
 		var min = 49152;
 		portfinder.basePort = (Math.floor(Math.random() * (max - min + 1)) + min);
@@ -15,10 +16,7 @@
 			app.use(require('./server'), { port: port });
 
 			app.init(function (){ document.title = process.title; });
- 			document.location = 'http://localhost:'+port
-		});
-		process.on('exit', function() {
-			(app.aria2_process && app.aria2_process.kill());
+ 			document.location = 'http://localhost:'+port;
 		});
 	</script>
 	
