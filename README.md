@@ -9,13 +9,16 @@ This starts the interface on a small webserver, then pulls up the page using nod
 
 For Mac OSX/Linux users aria2c will need to be in your PATH. Binaries for Windows are included.
 
-The easy way: npm install -g aria2ui; aria2ui
+The easy way: npm install -g aria2ui
 The hard way (you'll need Make):
 
 git clone https://github.com/znetstar/aria2ui.git
 cd aria2ui
 npm install -g
 npm start
+
+You can then run with: aria2ui
+The command forwards any args to aria2c (e.g. aria2ui --dir="xyz")
 
 * Installing
 
