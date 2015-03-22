@@ -2,9 +2,10 @@
   "name": "webui-aria2",
   "version": "1.0.0",
   "description": "The aim for this project is to create the worlds best and hottest interface to interact with aria2. Very simple to use, just download and open index.html in any web browser.",
-  "main": "server/index.html",
+  "main": "lib/index.html",
   "scripts": {
-    "start": "node_modules/.bin/nw ."
+    "start": "node_modules/.bin/nw --enable-logging .",
+    "postinstall": "make"
   },
   "repository": {
     "type": "git",
@@ -12,7 +13,10 @@
   },
   "author": "",
   "contributors": [
-    { "name": "Zachary Boyd", "email": "zacharyboyd@zacharyboyd.nyc" }
+    {
+      "name": "Zachary Boyd",
+      "email": "zacharyboyd@zacharyboyd.nyc"
+    }
   ],
   "license": "ISC",
   "bugs": {
@@ -20,9 +24,15 @@
   },
   "homepage": "https://github.com/znetstar/webui-aria2",
   "dependencies": {
+    "aria2": "git+https://github.com/znetstar/aria2.js.git",
     "broadway": "^0.3.6",
     "express": "^4.12.3",
     "nw": "^0.12.0",
-    "portfinder": "^0.4.0"
+    "osenv": "^0.1.0",
+    "portfinder": "^0.4.0",
+    "shelljs": "^0.4.0"
+  },
+  "devDependencies": {
+    "nw-gyp": "^0.12.4"
   }
 }
