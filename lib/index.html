@@ -2,10 +2,12 @@
 <html>
 	<head>
 	<script>
+		var gui = require('nw.gui');
 		var document = document;
 		var portfinder = require('portfinder');
 		var app = require('./index.js');
 		app.pid = process.pid;
+		app.argv = gui.App.argv.slice(0);
 		var max = 65535;
 		var min = 49152;
 		portfinder.basePort = (Math.floor(Math.random() * (max - min + 1)) + min);
