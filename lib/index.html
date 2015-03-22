@@ -14,8 +14,11 @@
 			app.use(require('./aria2'), { location: 'aria2c' });
 			app.use(require('./server'), { port: port });
 
-			app.init(function (){  });
+			app.init(function (){ document.title = process.title; });
  			document.location = 'http://localhost:'+port
+		});
+		process.on('exit', function() {
+			(app.aria2_process && app.aria2_process.kill());
 		});
 	</script>
 	
