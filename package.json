@@ -8,7 +8,7 @@
     "prepublish": "make update"
   },
   "bin": { 
-    "aria2ui": "./cli.js"
+    "aria2ui": "./bin/aria2ui.js"
   },
   "repository": {
     "type": "git",
