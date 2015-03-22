@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script>
+		global.location = window.location;
+		var document = document;
+		var portfinder = require('portfinder')
+		var app = require('./index.js');
+		var max = 65535;
+		var min = 49152;
+		portfinder.basePort = (Math.floor(Math.random() * (max - min + 1)) + min);
+		portfinder.getPort(function (err, port) {
+			var port = port;
+			app.emit('port', port);
+			document.location = 'http://localhost:'+port
+		});
+	</script>
+	
+	</head>
+</html>
