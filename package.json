@@ -1,7 +1,7 @@
 {
   "name": "aria2ui",
-  "version": "1.0.0",
-  "description": "The aim for this project is to create the worlds best and hottest interface to interact with aria2. Very simple to use, just download and open index.html in any web browser.",
+  "version": "1.0.1",
+  "description": "A cross-platform Desktop Web App version of ziahamza/webui-aria2 built using node-webkit.",
   "main": "lib/index.html",
   "scripts": {
     "start": "node_modules/.bin/nw --enable-logging .",
