@@ -5,6 +5,18 @@ Aria2 UI is a node-webkit wrapper around "ziahamza/webui-aria2". webui-aria2 is 
 
 This starts the interface on a small webserver, then pulls up the page using node-webkit.
 
+* Running
+
+For Mac OSX/Linux users aria2c will need to be in your PATH. Binaries for Windows are included.
+
+The easy way: npm install -g aria2ui; aria2ui
+The hard way (you'll need Make):
+
+git clone https://github.com/znetstar/aria2ui.git
+cd aria2ui
+npm install -g
+npm start
+
 * Installing
 
 Since downloading aria2c on windows can be a pain, I've included binaries for both 32/64 bit Windows which will be automatically used.
