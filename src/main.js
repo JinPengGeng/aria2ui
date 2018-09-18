@@ -29,7 +29,7 @@ async function gui(clientConfig) {
         });
     });
 
-    window = new BrowserWindow({ height: 768, width: 1024, icon: path.join(__dirname, "..", "icons", "arrow-alt-circle-down.png") });
+    window = new BrowserWindow({ height: 768, width: 1024, icon: path.join(__dirname, "..", "icons", "app-icon.png") });
 
     window.loadFile(path.join(webuiDir, "index.html"));
 

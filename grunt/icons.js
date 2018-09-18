@@ -5,11 +5,11 @@ const { mkdir, exec, cp, rm } = require('shelljs');
 
 const project_root = path.join(__dirname, "..");
 const icon_root = path.join(project_root, "icons");
-const icon_source = path.join(icon_root, "arrow-alt-circle-down.svg");
-const iconset_folder = path.join(icon_root, "arrow-alt-circle-down.iconset");
-const icns_dest = path.join(icon_root, "arrow-alt-circle-down.icns");
-const windows_ico_dest = path.join(icon_root, "arrow-alt-circle-down.ico");
-const generic_dest = path.join(icon_root,  "arrow-alt-circle-down.png");
+const icon_source = path.join(icon_root, "app-icon.svg");
+const iconset_folder = path.join(icon_root, "app-icon.iconset");
+const icns_dest = path.join(icon_root, "app-icon.icns");
+const windows_ico_dest = path.join(icon_root, "app-icon.ico");
+const generic_dest = path.join(icon_root,  "app-icon.png");
 
 const icon_sizes = [16,32,64,128,256,512];
 const windows_icon_size = 256;

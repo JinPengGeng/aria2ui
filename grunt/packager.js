@@ -6,7 +6,7 @@ const {rm} = require('shelljs');
 const project_root = path.join(__dirname, "..");
 const icon_root = path.join(project_root, "icons");
 const pkg = JSON.parse(fs.readFileSync(path.join(project_root, 'package.json'), 'utf8'));
-const icon = path.join(icon_root, 'arrow-alt-circle-down');
+const icon = path.join(icon_root, 'app-icon');
 const out_dir = path.join(project_root, 'build');
 
 module.exports = (grunt) => {
