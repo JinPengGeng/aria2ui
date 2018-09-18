@@ -4,12 +4,9 @@
   "description": "A cross-platform Desktop electron wrapper for ziahamza/webui-aria2",
   "scripts": {
     "start": "electron .",
-    "build": "grunt",
-    "build-all": "grunt icons packager:all"
-  },
-  "main": "src/main.js",
-  "bin": {
-    "aria2ui": "bin/aria2ui"
+    "build": "grunt build",
+    "build-all": "grunt build-all",
+    "dist": "grunt dist"
   },
   "repository": {
     "type": "git",
@@ -23,8 +20,8 @@
     "lodash": "^4.17.11",
     "minimist": "^1.2.0"
   },
-  "preferGlobal": true,
   "devDependencies": {
+    "adm-zip": "^0.4.11",
     "electron": "^2.0.9",
     "electron-packager": "^12.1.2",
     "grunt": "^1.0.3",

@@ -1,0 +1,28 @@
+os: osx
+language: node_js
+node_js:
+- '10'
+before_install:
+- brew update
+- brew install wine
+script:
+- npm run dist
+before_dpeloy:
+- git config --local user.name "Zachary Boyd"
+- git config --local user.name "zachary@zacharyboyd.nyc"
+deploy:
+  provider: releases
+  api_key:
+    secure: L0HewkJAhGrnAB3iVxOmPlLhZhaT/wPOJJ6w8CoqVBVWEq/vgjjizutC8mPV/tqMgzCr2f58iOEq9Qdidz1Sl7vcnqgC9a8qS0l5PMQN+hipflJr96NOkU6uYha9RgNZEbTbuAKLqBd8Urwh4wbuPoXjSjPtrEWPup3DDir8t1eegzTV2MWwTYia6UFvO5fd/YMkp2bOgEicIGjBhY6iWTMp4U3VEUKqJIt3muuXsuC1SkJygr7Pr2d8Vzan+UO88rsYkTYQU0HocRUKC186kwOLAASkcL98FD7ctwnYfexQGxrD/TMHrRExs5m0rU/1IJD9NwOwIw4PpQGZfqHoO2SzG33kGLOxOETHETwebe5BZ8e0fGstI5TvwKIUYC8mGo7OHXRyCjHXNcXUUScLocIog0qceR9SqjdDCK58vHljPpC/FBsF704hUdf6mJa2fDufoszXUD9hXvf0CaGhTc5qEwqwe+Z/pHUttVq3ux/uo0Z8AY/VJzH/Bs+yvbfp7KODWL9YY6DdwZYemrqby0FKlrIhvvxyJ6f0H3tvP1JRUd0fE5lSM+nXCpt8GAW46GPwMnGW6YgrGwxfR1j/IdfCMLdLTDioR1rRsf5lSNXyWoZqobpLQRNQ20b8UcljJZ3o+QtPK5talfa1RNmva1H0TKE3DXUg7KU0B6+SYN0=
+  files:
+    - "dist/aria2ui-darwin-x64.zip"
+    - "dist/aria2ui-linux-arm64.zip"
+    - "dist/aria2ui-linux-armv7l.zip"
+    - "dist/aria2ui-linux-ia32.zip"
+    - "dist/aria2ui-linux-x64.zip"
+    - "dist/aria2ui-mas-x64.zip"
+    - "dist/aria2ui-win32-ia32.zip"
+    - "dist/aria2ui-win32-x64.zip"
+  on:
+    tags: true
+    repo: znetstar/aria2ui
