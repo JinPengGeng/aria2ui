@@ -11,6 +11,7 @@ module.exports = (grunt) => {
 
     grunt.registerTask('build', ['icons', 'packager']);
     grunt.registerTask('build-all', ['icons', 'packager:all']);
-    grunt.registerTask('dist', ['build-all', 'zipper']);
+    grunt.registerTask('dist', ['build', 'zipper']);
+    grunt.registerTask('dist-all', ['build-all', 'zipper']);
     grunt.registerTask('default', ['build']);
 };

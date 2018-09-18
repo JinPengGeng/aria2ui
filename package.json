@@ -6,7 +6,8 @@
     "start": "electron .",
     "build": "grunt build",
     "build-all": "grunt build-all",
-    "dist": "grunt dist"
+    "dist": "grunt dist",
+    "dist-all": "grunt dist all"
   },
   "main": "src/main.js",
   "repository": {
@@ -28,6 +29,7 @@
     "grunt": "^1.0.3",
     "sharp": "^0.20.8",
     "shelljs": "^0.8.2",
+    "tar": "^4.4.6",
     "to-ico": "^1.1.5"
   }
 }

@@ -1,9 +1,5 @@
 .DS_store
 .vscode
 node_modules
-icons/app-icon.iconset
-icons/app-icon.icns
-icons/app-icon.ico
-icons/app-icon.png
 build
 dist
