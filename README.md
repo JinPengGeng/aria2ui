@@ -11,4 +11,6 @@ Upon installation it will download the latest version of aria2 binary for your p
 
 ## Config
 
+All command line arguments will be forwarded to `aria2c` so `aria2ui --dir="~/Downloads"` would work the same way `aria2c --dir="~/Downloads"` does. By default aria2c will listen to a random port and use a random rpc secret. To use a custom port and/or secret use the `rpc-listen-port` and `rpc-secret` arguments, aria2ui will connect to the specified port and use the specified secret.
+
 Using [get-aria2](https://github.com/znetstar/get-aria2) aria2ui will download the latest aria2c binary for your platform. To use a different aria2c binary, set the `ARIA2_PATH` environment variable. To use an aria2c binary in the `PATH` use `ARIA2_PATH=aria2c`.

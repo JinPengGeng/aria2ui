@@ -27,6 +27,7 @@
     "electron": "^2.0.9",
     "electron-packager": "^12.1.2",
     "grunt": "^1.0.3",
-    "sharp": "^0.20.8"
+    "sharp": "^0.20.8",
+    "shelljs": "^0.8.2"
   }
 }

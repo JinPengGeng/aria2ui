@@ -10,7 +10,7 @@ const { cloneDeep } = require('lodash');
 
 const webuiDir = path.join(__dirname, '..', "webui-aria2", "docs");
 let window;
-let argv = minimist(process.argv.slice(2));
+let argv = minimist(process.argv.slice(1));
 let aria2cProcess;
 
 const aria2_path = process.env.ARIA2_PATH || aria2cPath();
