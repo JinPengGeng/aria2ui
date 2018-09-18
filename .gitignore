@@ -1,3 +1,7 @@
 .DS_store
 .vscode
 node_modules
+icons/arrow-alt-circle-down.iconset
+icons/arrow-alt-circle-down.icns
+icons/arrow-alt-circle-down.ico
+build

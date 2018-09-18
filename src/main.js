@@ -1,18 +1,19 @@
 const path = require('path');
 const { spawn } = require('child_process');
 const crypto = require('crypto');
-const { Server } = require('http');
 const { app, BrowserWindow, session, protocol } = require('electron');
 
 const minimist = require('minimist');
 const getPort = require('get-port');
 const { aria2cPath } = require('get-aria2');
-const cloneDeep = require('lodash.clonedeep');
+const { cloneDeep } = require('lodash');
 
 const webuiDir = path.join(__dirname, '..', "webui-aria2", "docs");
 let window;
 let argv = minimist(process.argv.slice(2));
 let aria2cProcess;
+
+const aria2_path = process.env.ARIA2_PATH || aria2cPath();
 
 async function gui(clientConfig) {
     let configCookie = { 
@@ -28,8 +29,8 @@ async function gui(clientConfig) {
         });
     });
 
-    window = new BrowserWindow({ height: 768, width: 1024 });
-    
+    window = new BrowserWindow({ height: 768, width: 1024, icon: path.join(__dirname, "..", "icons", "arrow-alt-circle-down.png") });
+
     window.loadFile(path.join(webuiDir, "index.html"));
 
     window.on('closed', () => {
@@ -72,7 +73,7 @@ async function aria2() {
     }
 
     return new Promise((resolve, reject) => {
-        aria2cProcess = spawn(aria2cPath(), args , {
+        aria2cProcess = spawn(aria2_path, args , {
             stdio: [ "ignore", "pipe", "pipe" ]
         });
 

@@ -1,11 +1,15 @@
 {
   "name": "aria2ui",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "A cross-platform Desktop electron wrapper for ziahamza/webui-aria2",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "grunt"
   },
   "main": "src/main.js",
+  "bin": {
+    "aria2ui": "bin/aria2ui"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/znetstar/aria2ui.git"
@@ -15,13 +19,14 @@
   "dependencies": {
     "get-aria2": "^1.0.4",
     "get-port": "^4.0.0",
-    "lodash.clonedeep": "^4.5.0",
-    "minimist": "^1.2.0",
-    "nconf": "^0.10.0",
-    "webui-aria2": "git+https://github.com/ziahamza/webui-aria2.git"
+    "lodash": "^4.17.11",
+    "minimist": "^1.2.0"
   },
   "preferGlobal": true,
   "devDependencies": {
-    "electron": "^2.0.9"
+    "electron": "^2.0.9",
+    "electron-packager": "^12.1.2",
+    "grunt": "^1.0.3",
+    "sharp": "^0.20.8"
   }
 }
