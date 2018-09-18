@@ -26,7 +26,8 @@ module.exports = (grunt) => {
                 /icons\/.*\.svg$/g,
                 /\.git.*/g,
                 /\.npmignore$/g,
-                /Gruntfile\.js$/g
+                /Gruntfile\.js$/g,
+                /dist/g
             ],
             out: out_dir
         };
