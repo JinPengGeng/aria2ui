@@ -1,42 +1,27 @@
 {
   "name": "aria2ui",
-  "version": "1.0.2",
-  "description": "A cross-platform Desktop Web App version of ziahamza/webui-aria2 built using node-webkit.",
-  "main": "lib/index.html",
+  "version": "1.1.0",
+  "description": "A cross-platform Desktop electron wrapper for ziahamza/webui-aria2",
   "scripts": {
-    "start": "node_modules/.bin/nw --enable-logging .",
-    "prepublish": "make update"
+    "start": "electron ."
   },
-  "bin": { 
-    "aria2ui": "./bin/aria2ui.js"
-  },
+  "main": "src/main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/znetstar/webui-aria2.git"
+    "url": "https://github.com/znetstar/aria2ui.git"
   },
-  "author": "Zachary Boyd <zacharyboyd@zacharyboyd.nyc>",
-  "contributors": [
-    {
-      "name": "hamza zia",
-      "email": "ziahamza2007@gmail.com"
-    }
-  ],
-  "license": "Apache License",
-  "bugs": {
-    "url": "https://github.com/znetstar/webui-aria2/issues"
-  },
-  "homepage": "https://github.com/znetstar/webui-aria2",
+  "author": "Zachary Boyd <zachary@zacharyboyd.nyc>",
+  "license": "MIT",
   "dependencies": {
-    "aria2": "git+https://github.com/znetstar/aria2.js.git",
-    "broadway": "^0.3.6",
-    "express": "^4.12.3",
-    "nw": "^0.12.0",
-    "osenv": "^0.1.0",
-    "portfinder": "^0.4.0",
-    "shelljs": "^0.4.0"
+    "get-aria2": "^1.0.4",
+    "get-port": "^4.0.0",
+    "lodash.clonedeep": "^4.5.0",
+    "minimist": "^1.2.0",
+    "nconf": "^0.10.0",
+    "webui-aria2": "git+https://github.com/ziahamza/webui-aria2.git"
   },
   "preferGlobal": true,
   "devDependencies": {
-    "nw-gyp": "^0.12.4"
+    "electron": "^2.0.9"
   }
 }

@@ -1,5 +1,4 @@
-aria2ui
-=============
+# aria2ui
 
 Aria2 UI is a node-webkit wrapper around "ziahamza/webui-aria2". webui-aria2 is by far the best aria2 gui I've found, however I hated having to open "aria2c", then WAMP just to get aria2 going.
 
