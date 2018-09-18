@@ -5,9 +5,7 @@ aria2ui is an Electron wrapper for [ziahamza/webui-aria2](https://github.com/zia
 ## Installation
 To install, run `npm install` then run `npm start` to start locally. 
 
-To bundle into an executable run `npm run build`. This will package the application into an installable exectuable under "build/". On MacOS it will generate a ".app" folder, on Windows a ".exe".
-
-See Build below.
+To bundle into an executable run `npm run build`. This will package the application into an installable exectuable under "build/".
 
 Upon installation it will download the latest version of aria2 binary for your platform.
 
