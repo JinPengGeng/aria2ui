@@ -10,7 +10,7 @@ const icon = path.join(icon_root, 'app-icon');
 const out_dir = path.join(project_root, 'build');
 
 module.exports = (grunt) => {
-    grunt.registerTask("packager", async function () {
+    grunt.registerTask("packager", async function (arg1) {
         grunt.task.requires("icons");
         let done = this.async();
 
@@ -33,6 +33,10 @@ module.exports = (grunt) => {
 
         let options = extend(cloneDeep(grunt.config.get("packager")), default_options);
         
+        if (arg1 === 'all') {
+            options.all = true;
+        }
+
         if (options.platform === 'darwin' || options.all || (!options.platform && process.platform === 'darwin')) {
             options.appBundleId = 'com.zacharyrtboyd.aria2ui';
             options.appCategoryType = 'public.app-category.utilities';
