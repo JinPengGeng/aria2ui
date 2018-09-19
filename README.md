@@ -2,6 +2,12 @@
 
 aria2ui is an Electron wrapper for [ziahamza/webui-aria2](https://github.com/ziahamza/webui-aria2). This package bundles the aria2c binary with the webui-aria2 interface.
 
+## Pre-built Packages
+
+Pre-built packages of aria2ui are available on [the releases](https://github.com/znetstar/aria2ui/releases) page. 
+
+The packages have been tested on Linux (Ubuntu 18.04), MacOS (10.13.6) and Windows (10) all x64. 
+
 ## Installation
 To install, run `npm install` then run `npm start` to start locally. 
 
