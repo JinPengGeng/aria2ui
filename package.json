@@ -1,6 +1,6 @@
 {
   "name": "aria2ui",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A cross-platform Desktop electron wrapper for ziahamza/webui-aria2",
   "scripts": {
     "start": "electron .",
