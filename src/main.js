@@ -1,7 +1,7 @@
 const path = require('path');
 const { spawn } = require('child_process');
 const crypto = require('crypto');
-const { app, BrowserWindow, session, protocol } = require('electron');
+const { app, BrowserWindow, session, protocol, Menu } = require('electron');
 
 const minimist = require('minimist');
 const getPort = require('get-port');
@@ -30,6 +30,27 @@ async function gui(clientConfig) {
     });
 
     window = new BrowserWindow({ height: 768, width: 1024, icon: path.join(__dirname, "..", "icons", "app-icon.png") });
+
+    let menu = [{
+        label: "aria2ui",
+        submenu: [
+            { label: "About Application", selector: "orderFrontStandardAboutPanel:" },
+            { type: "separator" },
+            { label: "Quit", accelerator: "Command+Q", click: function() { app.quit(); }}
+        ]}, {
+        label: "Edit",
+        submenu: [
+            { label: "Undo", accelerator: "CmdOrCtrl+Z", selector: "undo:" },
+            { label: "Redo", accelerator: "Shift+CmdOrCtrl+Z", selector: "redo:" },
+            { type: "separator" },
+            { label: "Cut", accelerator: "CmdOrCtrl+X", selector: "cut:" },
+            { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
+            { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
+            { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" }
+        ]}
+    ];
+
+    Menu.setApplicationMenu(Menu.buildFromTemplate(menu));
 
     window.loadFile(path.join(webuiDir, "index.html"));
 
