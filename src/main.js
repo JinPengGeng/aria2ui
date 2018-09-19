@@ -1,7 +1,7 @@
 const path = require('path');
 const { spawn } = require('child_process');
 const crypto = require('crypto');
-const { app, BrowserWindow, session, protocol, Menu } = require('electron');
+const { app, BrowserWindow, session, protocol, Menu, shell } = require('electron');
 
 const minimist = require('minimist');
 const getPort = require('get-port');
@@ -29,27 +29,66 @@ async function gui(clientConfig) {
         });
     });
 
-    window = new BrowserWindow({ height: 768, width: 1024, icon: path.join(__dirname, "..", "icons", "app-icon.png") });
+    window = new BrowserWindow({ 
+        height: 768, 
+        width: 1024, 
+        icon: path.join(__dirname, "..", "icons", "app-icon.png"), 
+        autoHideMenuBar: true 
+    });
 
-    let menu = [{
-        label: "aria2ui",
-        submenu: [
-            { label: "About Application", selector: "orderFrontStandardAboutPanel:" },
-            { type: "separator" },
-            { label: "Quit", accelerator: "Command+Q", click: function() { app.quit(); }}
-        ]}, {
-        label: "Edit",
-        submenu: [
-            { label: "Undo", accelerator: "CmdOrCtrl+Z", selector: "undo:" },
-            { label: "Redo", accelerator: "Shift+CmdOrCtrl+Z", selector: "redo:" },
-            { type: "separator" },
-            { label: "Cut", accelerator: "CmdOrCtrl+X", selector: "cut:" },
-            { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
-            { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
-            { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" }
-        ]}
-    ];
+    let menu = [
+        {
+          label: 'Edit',
+          submenu: [
+            {role: 'undo'},
+            {role: 'redo'},
+            {type: 'separator'},
+            {role: 'cut'},
+            {role: 'copy'},
+            {role: 'paste'},
+            {role: 'selectall'}
+          ]
+        },
+        {
+          role: 'window',
+          submenu: [
+            {role: 'minimize'},
+            {role: 'close'}
+          ]
+        },
+        {
+          role: 'help',
+          submenu: [
+            {
+              label: 'Learn More',
+              click: () => { shell.openExternal('https://github.com/znetstar/aria2ui') }
+            }
+          ]
+        }
+      ]
+      if (process.platform === 'darwin') {
+        menu.unshift({
+            label: app.getName(),
+            submenu: [
+            {role: 'about'},
+            {type: 'separator'},
+            {role: 'hide'},
+            {role: 'hideothers'},
+            {role: 'unhide'},
+            {type: 'separator'},
+            {role: 'quit'}
+            ]
+        })
+        
 
+        menu[2].submenu = [
+            {role: 'close'},
+            {role: 'minimize'},
+            {role: 'zoom'},
+            {type: 'separator'},
+            {role: 'front'}
+        ]
+    }
     Menu.setApplicationMenu(Menu.buildFromTemplate(menu));
 
     window.loadFile(path.join(webuiDir, "index.html"));
